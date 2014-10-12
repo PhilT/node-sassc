@@ -1,0 +1,16 @@
+#!/bin/env bash
+
+export SASS_LIBSASS_PATH=../libsass
+export CC=gcc
+export MAKE=make
+
+if [[ `uname | grep MINGW32_NT` ]]; then
+  export MAKE=mingw32-make
+fi
+
+git clone https://github.com/sass/libsass
+git clone https://github.com/sass/sassc
+
+cd ./sassc
+$MAKE
+cd ..

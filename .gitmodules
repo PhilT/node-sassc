@@ -1,6 +1,0 @@
-[submodule "sassc"]
-	path = sassc
-	url = https://github.com/sass/sassc
-[submodule "libsass"]
-	path = libsass
-	url = https://github.com/sass/libsass
