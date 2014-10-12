@@ -1,0 +1,26 @@
+{
+  "name": "node-sassc",
+  "version": "0.0.1",
+  "description": "Sassc compiled with MinGW or native compiler",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/PhilT/node-sassc.git"
+  },
+  "bugs": {
+    "url": "git@github.com/PhilT/node-sassc/issues"
+  },
+  "keywords": [
+    "sass",
+    "libsass",
+    "sassc"
+  ],
+  "author": "Phil Thompson",
+  "license": "BSD-2-Clause",
+  "bin": "./sassc/bin/sassc",
+  "scripts": {
+    "download-libsass": "cd ./libsass && git submodule init && git submodule update",
+    "download-sassc": "cd ./sassc && git submodule init && git submodule update",
+    "install-all": "bash -c \"mkdir sassc/bin && export SASS_LIBSASS_PATH=../libsass && export CC=gcc && cd ./sassc; mingw32-make; cd ..\"",
+    "preinstall": "npm run install-all"
+  }
+}
